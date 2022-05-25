@@ -52,11 +52,9 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="html/lms/category.html" class="nk-menu-link"><span class="nk-menu-text">Catagories</span></a>
+                                            <a href="{{ route('courses.index') }}" class="nk-menu-link"><span class="nk-menu-text">Courses</span></a>
                                         </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/lms/courses.html" class="nk-menu-link"><span class="nk-menu-text">Course List</span></a>
-                                        </li>
+
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item has-sub">
@@ -66,21 +64,12 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="html/lms/instructor-dashborad.html" class="nk-menu-link"><span class="nk-menu-text">Instructor Overview</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/lms/instructor-list.html" class="nk-menu-link"><span class="nk-menu-text">Instructor List</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/lms/instructor-details.html" class="nk-menu-link"><span class="nk-menu-text">Instructor Details</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/lms/instructor-payment.html" class="nk-menu-link"><span class="nk-menu-text">Instructor Payment</span></a>
+                                            <a href="{{ route('instructors.index') }}" class="nk-menu-link"><span class="nk-menu-text">Instructor List</span></a>
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
                                 <li class="nk-menu-item">
-                                    <a href="html/lms/students.html" class="nk-menu-link">
+                                    <a href="{{ route('students.index') }}" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-users-fill"></em></span>
                                         <span class="nk-menu-text">Students</span>
                                     </a>
