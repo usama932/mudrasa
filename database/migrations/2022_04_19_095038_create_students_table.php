@@ -18,11 +18,15 @@ return new class extends Migration
             $table->string('name')->nullable();
             $table->string('father_name')->nullable();
             $table->date('dob')->nullable();
-            $table->string('form_b')->nullable();
-            $table->string('education')->nullable();
-            $table->string('temp_address')->nullable();
-            $table->string('permanent_address')->nullable();
+            $table->string('cnic')->nullable();
+            $table->string('father_occupation')->nullable();
+            $table->string('home_address')->nullable();
+            $table->string('previous_address')->nullable();
+            $table->string('image')->nullable();
+            $table->string('mobile_no')->nullable();
+            $table->string('course_id')->nullable();
             $table->string('previous_school')->nullable();
+            $table->string('add_type')->nullable();
             $table->timestamps();
         });
     }

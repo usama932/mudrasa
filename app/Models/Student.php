@@ -12,11 +12,15 @@ class Student extends Model
         'name',
         'father_name',
         'dob',
-        'form_b',
-        'education',
-        'temp_address',
-        'permanent_address',
-        'previous_school'
-
+        'cnic',
+        'father_occupation',
+        'home_address',
+        'previous_address',
+        'previous_school',
+        'image'.
+        'mobile_no',
+        'course_id',
+        'previous_school',
+        'add_type',
     ];
 }

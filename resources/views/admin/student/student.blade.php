@@ -71,30 +71,30 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="full-name">Full Name / پورا نام</label>
-                                    <input type="text" class="form-control" id="full-name" placeholder="Full Name / پورا نام">
+                                    <input type="text" class="form-control" name="name" id="full-name" placeholder="Full Name / پورا نام">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="full-name">Full Father Name/ والد کا پورا نام</label>
-                                    <input type="text" class="form-control" id="full-name" placeholder="Full Father Name/ والد کا پورا نام">
+                                    <input type="text" class="form-control" name="father_name" id="full-name" placeholder="Full Father Name/ والد کا پورا نام">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="full-name">Father Occupation / باپ کا پیشہ</label>
-                                    <input type="text" class="form-control" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
+                                    <input type="text" class="form-control" name="father_occupation" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label">Course to Enroll/ داخلہ لینے کے لیے کورس</label>
                                     <div class="form-control-wrap">
-                                        <select class="form-select" data-placeholder="Course to Enroll/ داخلہ لینے کے لیے کورس">
-                                            <option value="default_option">Hifz /حفظ</option>
-                                            <option value="option_select_name">Tajweed</option>
-                                            <option value="option_select_name">Round Hifz/ گردان</option>
-                                            <option value="option_select_name">Nazra/ ناظرہ</option>
+                                        <select class="form-select" name="course_id" data-placeholder="Course to Enroll/ داخلہ لینے کے لیے کورس">
+                                            <option value="Hifz /حفظ">Hifz /حفظ</option>
+                                            <option value="Tajweed">Tajweed</option>
+                                            <option value="Round Hifz/ گردان">Round Hifz/ گردان</option>
+                                            <option value="Nazra/ ناظرہ">Nazra/ ناظرہ</option>
                                         </select>
                                     </div>
                                 </div>
@@ -102,34 +102,39 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">Mobile Number/ موبائل نمبر</label>
-                                    <input type="text" class="form-control" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
+                                    <input type="text" class="form-control" name="mobile_no" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="phone-no">#form B/CNIC / فارم B/CNIC </label>
-                                    <input type="text" class="form-control" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
+                                    <input type="text" class="form-control" name="cnic" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="birth-day">Date of Birth/ پیدائش کی تاریخ</label>
-                                    <input type="text" class="form-control date-picker" id="birth-day" placeholder="Date of Birth/ پیدائش کی تاریخ">
+                                    <input type="text" class="form-control date-picker" name="dob" id="birth-day" placeholder="Date of Birth/ پیدائش کی تاریخ">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="address-l1">Home Address/ گھر کا پتہ</label>
-                                    <input type="text" class="form-control" id="address-l1" value="" >
+                                    <input type="text" class="form-control" name="home_address" id="address-l1" value="" >
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="form-label" for="address-l2">Previous Mudrasa Address/پچھلا مدرسہ کا پتہ </label>
-                                    <input type="text" class="form-control" id="address-l2" value="">
+                                    <input type="text" class="form-control" name="previous_school" id="address-l2" value="">
                                 </div>
                             </div>
-
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="address-l2">Image (Passport Size)</label>
+                                    <input type="file" name="image" class="form-control" id="address-l2"  value="">
+                                </div>
+                            </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
@@ -137,11 +142,11 @@
                                     <div class="form-group">
                                         <label class="form-label">Admit Type/ داخلہ کی قسم</label>
                                         <div class="form-control-wrap">
-                                            <select class="form-select" data-placeholder="Admit Type/ داخلہ کی قسم">
-                                                <option value="default_option">Hostel and tution/ ہاسٹل اور ٹیوشن</option>
-                                                <option value="option_select_name">Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن</option>
-                                                <option value="option_select_name">Tution/ ٹیوشن</option>
-
+                                            <select class="form-select" name="add_type" data-placeholder="Admit Type/ داخلہ کی قسم">
+                                                <option value="Hostel and tution/ ہاسٹل اور ٹیوشن">Hostel and tution/ ہاسٹل اور ٹیوشن</option>
+                                                <option value="Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن">Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن</option>
+                                                <option value="Tution/ ٹیوشن">Tution/ ٹیوشن</option>
+                                                <option value="Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ">Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ</option>
                                             </select>
                                         </div>
                                     </div>
@@ -150,7 +155,7 @@
                             <div class="col-md-12">
                                 <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                     <li>
-                                        <a href="#" class="btn btn-primary">Add Student</a>
+                                        <button type="submit" class="btn btn-primary">Add Student</button>
                                     </li>
                                     <li>
                                         <a href="#" data-dismiss="modal" class="link link-light">Cancel</a>
