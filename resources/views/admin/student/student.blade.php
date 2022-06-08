@@ -29,22 +29,29 @@
                                 <thead>
                                     <tr>
                                         <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>Father Name</th>
+                                        <th>Reg No #</th>
+                                        <th>Course</th>
+                                        <th>Instructor</th>
+                                        <th>Image</th>
+                                        <th>Mobile #</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach ($students as $student)
                                     <tr>
-                                        <td>Donna Snider</td>
-                                        <td>Customer Support</td>
-                                        <td>New York</td>
-                                        <td>27</td>
-                                        <td>2011/01/25</td>
-                                        <td>$112,000</td>
+                                        <td>{{ $student->name }}</td>
+                                        <td>{{ $student->father_name }}</td>
+                                        <td>{{ $student->reg_no }}</td>
+                                        <td>{{ $student->course_id }}</td>
+                                        <td>{{ $student->instructor }}</td>
+                                        <td>{{ $student->image }}</td>
+                                        <td>{{ $student->mobile }}</td>
+                                        <td>Action</td>
                                     </tr>
+                                    @endforeach
+
                                 </tbody>
                             </table>
                         </div>
@@ -67,102 +74,141 @@
                 </ul><!-- .nav-tabs -->
                 <div class="tab-content">
                     <div class="tab-pane active" id="student-info">
-                        <div class="row gy-4">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="full-name">Full Name / پورا نام</label>
-                                    <input type="text" class="form-control" name="name" id="full-name" placeholder="Full Name / پورا نام">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="full-name">Full Father Name/ والد کا پورا نام</label>
-                                    <input type="text" class="form-control" name="father_name" id="full-name" placeholder="Full Father Name/ والد کا پورا نام">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="full-name">Father Occupation / باپ کا پیشہ</label>
-                                    <input type="text" class="form-control" name="father_occupation" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label">Course to Enroll/ داخلہ لینے کے لیے کورس</label>
-                                    <div class="form-control-wrap">
-                                        <select class="form-select" name="course_id" data-placeholder="Course to Enroll/ داخلہ لینے کے لیے کورس">
-                                            <option value="Hifz /حفظ">Hifz /حفظ</option>
-                                            <option value="Tajweed">Tajweed</option>
-                                            <option value="Round Hifz/ گردان">Round Hifz/ گردان</option>
-                                            <option value="Nazra/ ناظرہ">Nazra/ ناظرہ</option>
-                                        </select>
+                        <form action="{{ route('students.store') }}" method="post">
+                            @csrf
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Full Name / پورا نام</label>
+                                        <input type="text" class="form-control" name="name" id="full-name" placeholder="Full Name / پورا نام">
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="phone-no">Mobile Number/ موبائل نمبر</label>
-                                    <input type="text" class="form-control" name="mobile_no" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="phone-no">#form B/CNIC / فارم B/CNIC </label>
-                                    <input type="text" class="form-control" name="cnic" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="birth-day">Date of Birth/ پیدائش کی تاریخ</label>
-                                    <input type="text" class="form-control date-picker" name="dob" id="birth-day" placeholder="Date of Birth/ پیدائش کی تاریخ">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="address-l1">Home Address/ گھر کا پتہ</label>
-                                    <input type="text" class="form-control" name="home_address" id="address-l1" value="" >
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="address-l2">Previous Mudrasa Address/پچھلا مدرسہ کا پتہ </label>
-                                    <input type="text" class="form-control" name="previous_school" id="address-l2" value="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="address-l2">Image (Passport Size)</label>
-                                    <input type="file" name="image" class="form-control" id="address-l2"  value="">
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <label class="form-label">Payment Methods</label>
+                                <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label">Admit Type/ داخلہ کی قسم</label>
+                                        <label class="form-label" for="full-name"> Addmission # / داخلہ نمبر</label>
+                                        <input type="text" class="form-control" name="reg_no" id="full-name" placeholder="Addmission # / داخلہ نمبر">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Full Father Name/ والد کا پورا نام</label>
+                                        <input type="text" class="form-control" name="father_name" id="full-name" placeholder="Full Father Name/ والد کا پورا نام">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Father Occupation / باپ کا پیشہ</label>
+                                        <input type="text" class="form-control" name="father_occupation" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Course to Enroll/ داخلہ لینے کے لیے کورس</label>
                                         <div class="form-control-wrap">
-                                            <select class="form-select" name="add_type" data-placeholder="Admit Type/ داخلہ کی قسم">
-                                                <option value="Hostel and tution/ ہاسٹل اور ٹیوشن">Hostel and tution/ ہاسٹل اور ٹیوشن</option>
-                                                <option value="Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن">Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن</option>
-                                                <option value="Tution/ ٹیوشن">Tution/ ٹیوشن</option>
-                                                <option value="Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ">Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ</option>
+                                            <select class="form-select" name="course_id" data-placeholder="Enroll Type/ اندراج کی قسم">
+                                                @foreach ($courses as $course)
+                                                <option value="{{ $course->course_name }}">{{ $course->course_name }}</option>
+                                                @endforeach
+
+
+
                                             </select>
                                         </div>
                                     </div>
                                 </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label"> Enroll type/ اندراج کی قسم</label>
+                                        <div class="form-control-wrap">
+                                            <select class="form-select" name="Enroll_type" data-placeholder="Enroll Type/ اندراج کی قسم">
+
+                                                <option value="Temporary/عارضی">Temporary/ عارضی</option>
+                                                <option value="Accepted/مقبول ">Accepted/ مقبول </option>
+                                                <option value="Temporary/عارضی">Left out/ چھوڑگیا</option>
+                                                <option value="Kicked out/نکال دیا">Kicked out/نکال دیا</option>
+                                                <option value="Completed/مکمل کر گیا ">Completed/مکمل کر گیا</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label">Assign Teacher/استاد کو تفویض کریں۔</label>
+                                        <div class="form-control-wrap">
+                                            <select class="form-select" name="instructor" data-placeholder="Assign Teacher/ستاد کو تفویض کریں۔">
+                                                @foreach ($instructors as $instructor)
+                                                <option value="{{ $instructor->full_name }}">{{ $instructor->full_name }}</option>
+                                                @endforeach
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone-no">Mobile Number/ موبائل نمبر</label>
+                                        <input type="text" class="form-control" name="mobile_no" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone-no">#form B/CNIC / فارم B/CNIC </label>
+                                        <input type="text" class="form-control" name="cnic" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="birth-day">Date of Birth/ پیدائش کی تاریخ</label>
+                                        <input type="date" class="form-control" name="dob" id="birth-day" placeholder="Date of Birth/ پیدائش کی تاریخ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="address-l1">Home Address/ گھر کا پتہ</label>
+                                        <input type="text" class="form-control" name="home_address" id="address-l1" value="" >
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="address-l2">Previous Mudrasa Address/پچھلا مدرسہ کا پتہ </label>
+                                        <input type="text" class="form-control" name="previous_school" id="address-l2" value="">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="address-l2">Image (Passport Size)</label>
+                                        <input type="file" name="image" class="form-control" id="address-l2"  value="">
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label class="form-label">Payment Methods</label>
+                                        <div class="form-group">
+                                            <label class="form-label">Admit Type/ داخلہ کی قسم</label>
+                                            <div class="form-control-wrap">
+                                                <select class="form-select" name="add_type" data-placeholder="Admit Type/ داخلہ کی قسم">
+                                                    <option value="Hostel and tution/ ہاسٹل اور ٹیوشن">Hostel and tution/ ہاسٹل اور ٹیوشن</option>
+                                                    <option value="Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن">Lunch and Tution/ دوپہر کا کھانا اور ٹیوشن</option>
+                                                    <option value="Tution/ ٹیوشن">Tution/ ٹیوشن</option>
+                                                    <option value="Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ">Tution with lunch break/ ٹیوشن دوپہر کے کھانے کے وقفے کے ساتھ</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                        <li>
+                                            <button type="submit" class="btn btn-primary">Add Student</button>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-dismiss="modal" class="link link-light">Cancel</a>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
-                            <div class="col-md-12">
-                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
-                                    <li>
-                                        <button type="submit" class="btn btn-primary">Add Student</button>
-                                    </li>
-                                    <li>
-                                        <a href="#" data-dismiss="modal" class="link link-light">Cancel</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
+                        </form>
                     </div><!-- .tab-pane -->
 
                 </div><!-- .tab-content -->

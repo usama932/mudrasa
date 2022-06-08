@@ -20,7 +20,9 @@ class Student extends Model
         'image'.
         'mobile_no',
         'course_id',
-        'previous_school',
         'add_type',
+        'reg_no',
+        'instructor',
+        'Enroll_type'
     ];
 }

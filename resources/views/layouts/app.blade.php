@@ -88,18 +88,18 @@
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
+                                {{-- <li class="nk-menu-item">
                                     <a href="html/lms/message.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-chat-fill"></em></span>
                                         <span class="nk-menu-text">Messages</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
-                                <li class="nk-menu-item">
+                                </li><!-- .nk-menu-item --> --}}
+                                {{-- <li class="nk-menu-item">
                                     <a href="html/lms/admin-profile.html" class="nk-menu-link">
                                         <span class="nk-menu-icon"><em class="icon ni ni-account-setting-fill"></em></span>
                                         <span class="nk-menu-text">Admin profile</span>
                                     </a>
-                                </li><!-- .nk-menu-item -->
+                                </li><!-- .nk-menu-item --> --}}
                                 <li class="nk-menu-item has-sub">
                                     <a href="#" class="nk-menu-link nk-menu-toggle">
                                         <span class="nk-menu-icon"><em class="icon ni ni-file-docs"></em></span>

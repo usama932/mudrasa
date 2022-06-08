@@ -16,10 +16,12 @@ return new class extends Migration
         Schema::create('students', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
+            $table->string('reg_no')->nullable();
             $table->string('father_name')->nullable();
             $table->date('dob')->nullable();
             $table->string('cnic')->nullable();
             $table->string('father_occupation')->nullable();
+            $table->string('instructor')->nullable();
             $table->string('home_address')->nullable();
             $table->string('previous_address')->nullable();
             $table->string('image')->nullable();
@@ -27,6 +29,8 @@ return new class extends Migration
             $table->string('course_id')->nullable();
             $table->string('previous_school')->nullable();
             $table->string('add_type')->nullable();
+            $table->string('Enroll_type')->nullable();
+
             $table->timestamps();
         });
     }
