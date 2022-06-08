@@ -4,6 +4,8 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Instructor;
+use Whoops\Exception\Inspector;
 
 class InstructorsController extends Controller
 {
@@ -14,7 +16,8 @@ class InstructorsController extends Controller
      */
     public function index()
     {
-        return view('admin.instructor.instructor');
+        $instructors = Instructor::all();
+        return view('admin.instructor.instructor',compact('instructors'));
     }
 
     /**
@@ -35,7 +38,15 @@ class InstructorsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Instructor::create([
+            'full_name' => $request->full_name,
+            'last_degree' => $request->last_degree,
+            'phone_number' => $request->phone_number,
+            'experiance' => $request->experiance,
+            'address' => $request->address,
+            'about_description' => $request->about_description
+        ]);
+        return redirect()->route('instructors.index')->with('success', 'Instructor added successfully');
     }
 
     /**
@@ -69,7 +80,15 @@ class InstructorsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Instructor::where('id',$id)->update([
+            'full_name' => $request->full_name,
+            'last_degree' => $request->last_degree,
+            'phone_number' => $request->phone_number,
+            'experiance' => $request->experiance,
+            'address' => $request->address,
+            'about_description' => $request->about_description
+        ]);
+        return redirect()->route('instructors.index')->with('success', 'Instructor updated successfully');
     }
 
     /**
@@ -80,6 +99,8 @@ class InstructorsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $instructor = Instructor::find($id);
+        $instructor->delete();
+        return redirect()->route('instructors.index')->with('success', 'Instructor deleted successfully');
     }
 }

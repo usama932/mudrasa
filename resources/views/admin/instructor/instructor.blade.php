@@ -22,28 +22,44 @@
                                 </div>
                             </div><!-- .nk-block-head-content -->
                         </div><!-- .nk-block-between -->
+                        @if(session()->has('success'))
+                        <div class="alert alert-success">
+                           {{ session()->get('success') }}
+                        </div>
+                        @endif
                     </div> <div class="card card-preview">
                         <div class="card-inner">
                             <table class="datatable-init-export nowrap table" data-export-title="Export">
                                 <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Position</th>
-                                        <th>Office</th>
-                                        <th>Age</th>
-                                        <th>Start date</th>
-                                        <th>Salary</th>
+                                        <th>Full Name/ پورا نام</th>
+                                        <th>Degree/ سناد</th>
+                                        <th>Phone #/فون</th>
+                                        <th>Experiance/ تجربہ</th>
+                                        <th>Address/ پتہ</th>
+                                        <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
+                                    @foreach($instructors as $instructor)
                                     <tr>
-                                        <td>Donna Snider</td>
-                                        <td>Customer Support</td>
-                                        <td>New York</td>
-                                        <td>27</td>
-                                        <td>2011/01/25</td>
-                                        <td>$112,000</td>
+                                        <td>{{ $instructor->full_name }}</td>
+                                        <td>{{ $instructor->last_degree }}</td>
+                                        <td>{{ $instructor->phone_number  }}</td>
+                                        <td>{{ $instructor->experiance  }}</td>
+                                        <td>{{ $instructor->address  }}</td>
+                                        <td>{{ $instructor->about_instructor  }}</td>
+                                        <td>
+                                            <span>
+                                            <a href="{{ route('instructors.edit', $instructor->id) }}" data-toggle="modal" data-target="#instructor-add{{ $instructor->id}}"><em class="icon ni ni-edit-fill"></em></a>
+                                            <form action="{{ route('instructors.destroy', $instructor->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-icon btn-danger"><em class="icon ni ni-trash-fill"></em></button>
+                                            </form>
+                                            </span>
                                     </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -58,77 +74,57 @@
             <div class="modal-content">
                 <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
-                    <h5 class="title">Add Instructor</h5>
-                    <form action="#" class="pt-2">
+                    <h5 class="title">Add Instructor/ انسٹرکٹر شامل کریں۔</h5>
+                    <form action="{{ route('instructors.store') }}" class="pt-2" method="post">
+                        @csrf
                         <div class="row gy-4">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="first-name">First Name</label>
-                                    <input type="text" class="form-control" id="first-name" placeholder="First name">
+                                    <label class="form-label" for="first-name">Full Name/ پورا نام</label>
+                                    <input type="text" class="form-control" id="first-name" name="full_name" placeholder="Full name">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="last-name">Last Name</label>
-                                    <input type="text" class="form-control" id="last-name" placeholder="Last name">
+                                    <label class="form-label" for="phone-no">Last Degree/ آخری ڈگری</label>
+                                    <input type="text" class="form-control" name="last_degree" id="phone-no" value="+92301-0000000" placeholder="Phone Number">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="email">Email Address</label>
-                                    <input type="email" class="form-control" id="email" placeholder="Email Address">
+                                    <label class="form-label" for="phone-no">Phone Number/ فون نمبر</label>
+                                    <input type="text" class="form-control" name="phone_number" id="phone-no" value="+92301-0000000" placeholder="Phone Number">
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="form-label" for="phone-no">Phone Number</label>
-                                    <input type="text" class="form-control" id="phone-no" value="+880" placeholder="Phone Number">
+                                    <label class="form-label" for="phone-no">Experiance/ تجربہ</label>
+                                    <input type="text" class="form-control" name="experiance" id="phone-no" value="+92301-0000000" placeholder="Phone Number">
                                 </div>
                             </div>
-                            <div class="col-md-6">
+
+                            <div class="col-md-12">
                                 <div class="form-group">
-                                    <label class="form-label" for="address-l1">Address Line 1</label>
-                                    <input type="text" class="form-control" id="address-l1" value="2337 Kildeer Drive">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="address-line2">Address Line 2</label>
-                                    <input type="text" class="form-control" id="address-line2" value="">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="address-st">State</label>
-                                    <input type="text" class="form-control" id="address-st" value="Kentucky">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="form-label" for="country">Country</label>
-                                    <select class="form-select" id="country">
-                                        <option>Canada</option>
-                                        <option>United State</option>
-                                        <option>United Kindom</option>
-                                        <option>Australia</option>
-                                        <option>India</option>
-                                        <option>Bangladesh</option>
-                                    </select>
+                                    <label class="form-label" for="address-l1">Address </label>
+                                    <input type="text" class="form-control" id="address-l1"  name="address" value="2337 Kildeer Drive">
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-group">
-                                    <label class="form-label" for="about-instractor">About Instractor</label>
-                                    <textarea class="form-control textarea-sm" id="about-instractor" placeholder="Discribe a little bit"></textarea>
+                                    <label class="form-label" for="about-instractor">About Instructor/انسٹرکٹر کے بارے میں</label>
+                                    <textarea class="form-control textarea-sm" id="about-instractor" name="about_description" placeholder="Discribe a little bit"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
                                     <li>
-                                        <a href="#" class="btn btn-primary">Add Instructor</a>
+                                        <div class="form-group">
+                                            <button  type="submit" class="btn btn-primary">Add Instructor/ انسٹرکٹر شامل کریں</button>
+                                        </div>
+
                                     </li>
                                     <li>
-                                        <a href="#" data-dismiss="modal" class="link link-light">Cancel</a>
+                                        <a href="#" data-dismiss="modal" class="link link-light">Cancel/ منسوخ کریں۔</a>
                                     </li>
                                 </ul>
                             </div>
@@ -138,126 +134,74 @@
             </div><!-- .modal-content -->
         </div><!-- .modal-dialog -->
     </div>
-    <div class="modal fade" tabindex="-1" role="dialog" id="region">
-        <div class="modal-dialog modal-lg" role="document">
+    @foreach ($instructors as $instructor)
+    <div class="modal fade" role="dialog" id="instructor-add{{ $instructor->id }}">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
-                    <h5 class="title mb-4">Select Your Country</h5>
-                    <div class="nk-country-region">
-                        <ul class="country-list text-center gy-2">
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/arg.png" alt="" class="country-flag">
-                                    <span class="country-name">Argentina</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/aus.png" alt="" class="country-flag">
-                                    <span class="country-name">Australia</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/bangladesh.png" alt="" class="country-flag">
-                                    <span class="country-name">Bangladesh</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/canada.png" alt="" class="country-flag">
-                                    <span class="country-name">Canada <small>(English)</small></span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/china.png" alt="" class="country-flag">
-                                    <span class="country-name">Centrafricaine</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/china.png" alt="" class="country-flag">
-                                    <span class="country-name">China</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/french.png" alt="" class="country-flag">
-                                    <span class="country-name">France</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/germany.png" alt="" class="country-flag">
-                                    <span class="country-name">Germany</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/iran.png" alt="" class="country-flag">
-                                    <span class="country-name">Iran</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/italy.png" alt="" class="country-flag">
-                                    <span class="country-name">Italy</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/mexico.png" alt="" class="country-flag">
-                                    <span class="country-name">México</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/philipine.png" alt="" class="country-flag">
-                                    <span class="country-name">Philippines</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/portugal.png" alt="" class="country-flag">
-                                    <span class="country-name">Portugal</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/s-africa.png" alt="" class="country-flag">
-                                    <span class="country-name">South Africa</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/spanish.png" alt="" class="country-flag">
-                                    <span class="country-name">Spain</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/switzerland.png" alt="" class="country-flag">
-                                    <span class="country-name">Switzerland</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/uk.png" alt="" class="country-flag">
-                                    <span class="country-name">United Kingdom</span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#" class="country-item">
-                                    <img src="./images/flags/english.png" alt="" class="country-flag">
-                                    <span class="country-name">United State</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+                    <h5 class="title">Update Instructor/ اانسٹرکٹر کو اپ ڈیٹ کریں۔۔</h5>
+                    <form action="{{ route('instructors.update',$instructor->id) }}" class="pt-2" method="post">
+                        @csrf
+                        @method('PUT')
+                        <div class="row gy-4">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="first-name">Full Name/ پورا نام</label>
+                                    <input type="text" class="form-control" id="first-name" value="{{ $instructor->full_name}}" name="full_name" placeholder="Full name">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone-no">Last Degree/ آخری ڈگری</label>
+                                    <input type="text" class="form-control" name="last_degree" id="phone-no" value="{{ $instructor->last_degree}}" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone-no">Phone Number/ فون نمبر</label>
+                                    <input type="text" class="form-control" name="phone_number" id="phone-no" value="{{ $instructor->phone_number}}" placeholder="Phone Number">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="form-label" for="phone-no">Experiance/ تجربہ</label>
+                                    <input type="text" class="form-control" name="experiance" id="phone-no" value="{{ $instructor->experiance}}" placeholder="Phone Number">
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="address-l1">Address </label>
+                                    <input type="text" class="form-control" id="address-l1"  name="address" value="{{ $instructor->address}}">
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-group">
+                                    <label class="form-label" for="about-instractor">About Instructor/انسٹرکٹر کے بارے میں</label>
+                                    <textarea class="form-control textarea-sm" id="about-instractor" name="about_description" placeholder="Discribe a little bit">{{ $instructor->about_description}}</textarea>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                    <li>
+                                        <div class="form-group">
+                                            <button  type="submit" class="btn btn-primary">Update Instructor/ انسٹرکٹر شامل کریں</button>
+                                        </div>
+
+                                    </li>
+                                    <li>
+                                        <a href="#" data-dismiss="modal" class="link link-light">Cancel/ منسوخ کریں۔</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </form>
+                </div><!-- .modal-body -->
             </div><!-- .modal-content -->
-        </div><!-- .modla-dialog -->
+        </div><!-- .modal-dialog -->
     </div>
+    @endforeach
+
+
 </x-app-layout>

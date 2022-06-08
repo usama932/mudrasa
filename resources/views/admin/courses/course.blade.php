@@ -11,12 +11,22 @@
                                     <p>You have total 8 Courses</p>
                                 </div>
                             </div><!-- .nk-block-head-content -->
+                            @if(session()->has('success'))
+                            <div class="alert alert-success">
+                               {{ session()->get('success') }}
+                            </div>
+                            @endif
+                            @if(session()->has('danger'))
+                            <div class="alert alert-danger">
+                               {{ session()->get('danger') }}
+                            </div>
+                            @endif
                             <div class="nk-block-head-content">
                                 <div class="toggle-wrap nk-block-tools-toggle">
                                     <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="pageMenu"><em class="icon ni ni-menu-alt-r"></em></a>
                                     <div class="toggle-expand-content" data-content="pageMenu">
                                         <ul class="nk-block-tools g-3">
-                                           
+
                                             <li class="nk-block-tools-opt"><a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalCreate"><em class="icon ni ni-plus"></em><span>Add Course/ کورس شامل کریں۔</span></a></li>
                                         </ul>
                                     </div>
@@ -26,38 +36,40 @@
                     </div><!-- .nk-block-head -->
                     <div class="nk-block">
                         <div class="row g-gs">
+                            @foreach ($courses as $course)
+
                             <div class="col-sm-6 col-lg-4 col-xxl-3">
                                 <div class="card h-100">
+                                    <form action="{{route('courses.destroy',$course->id)}}" method="POST">
+
+                                        @csrf
+                                        @method('DELETE')
+
+                                        <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                                    </form>
                                     <div class="card-inner">
                                         <div class="d-flex justify-content-between align-items-start mb-3">
                                             <a href="html/lms/courses.html" class="d-flex align-items-center">
-                                                <div class="user-avatar sq bg-purple"><span>GD</span></div>
+
                                                 <div class="ml-3">
-                                                    <h6 class="title mb-1">Graphics Design</h6>
-                                                    <span class="sub-text">4 SubCourses</span>
+                                                    <h6 class="title mb-1">{{ $course->course_name }}</h6>
+
                                                 </div>
                                             </a>
-                                            <div class="dropdown">
-                                                <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger mt-n1 mr-n1" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    <ul class="link-list-opt no-bdr">
-                                                        <li><a href="#" data-toggle="modal" data-target="#modalEdit"><em class="icon ni ni-edit"></em><span>Edit Course</span></a></li>
-                                                        <li><a data-toggle="modal" data-target="#modalDelete" href="#"><em class="icon ni ni-delete"></em><span>Delete Course</span></a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
+
                                         </div>
-                                        <p>Website Design & Develop the website with web applications</p>
+                                        <p>{{  $course->description}}</p>
                                         <ul class="d-flex flex-wrap g-1">
-                                            <li><span class="badge badge-dim badge-primary">Photoshop</span></li>
-                                            <li><span class="badge badge-dim badge-danger">Adobe Illustrator</span></li>
-                                            <li><span class="badge badge-dim badge-info">Logo Design</span></li>
-                                            <li><span class="badge badge-dim badge-warning">Drawing</span></li>
-                                            <li><span class="badge badge-dim badge-secondary">Figma</span></li>
+                                            <li><span class="badge badge-dim badge-primary">Tajweed/ تجوید</span></li>
+                                            <li><span class="badge badge-dim badge-danger">Nazra/ ناظرہ</span></li>
+                                            <li><span class="badge badge-dim badge-info">Hifz/ قاری</span></li>
+                                            <li><span class="badge badge-dim badge-warning">Qari/ قاری</span></li>
                                         </ul>
                                     </div>
                                 </div>
                             </div>
+                            @endforeach
+
                         </div>
                     </div><!-- .nk-block -->
                 </div>
@@ -71,22 +83,23 @@
                 <a href="#" class="close" data-dismiss="modal" aria-label="Close"> <em class="icon ni ni-cross-sm"></em></a>
                 <div class="modal-body modal-body-md">
                     <h5 class="title">Add Course</h5>
-                    <form action="#" class="pt-2">
+                    <form action="{{ route('courses.store') }}" class="pt-2" method="post">
+                        @csrf
                         <div class="form-group">
-                            <label class="form-label" for="full-name">Course Name</label>
+                            <label class="form-label" for="full-name">Course Name/ کورس کا نام</label>
                             <div class="form-control-wrap">
-                                <input type="text" class="form-control" id="full-name" placeholder="">
+                                <input type="text" class="form-control" name="course_name" id="full-name" placeholder="">
                             </div>
                         </div>
                         <div class="form-group">
-                            <label class="form-label" for="description">Description</label>
+                            <label class="form-label" for="description">Description/ تفصیل</label>
                             <div class="form-control-wrap">
                                 <textarea class="form-control" name="description" id="description" placeholder="Write Course Description"></textarea>
                             </div>
                         </div>
 
                         <div class="form-group">
-                            <button data-dismiss="modal" type="submit" class="btn btn-primary">Save Informations</button>
+                            <button  type="submit" class="btn btn-primary">Save Informations</button>
                         </div>
                     </form>
                 </div>
