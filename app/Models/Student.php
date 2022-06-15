@@ -17,7 +17,7 @@ class Student extends Model
         'home_address',
         'previous_address',
         'previous_school',
-        'image'.
+        'image',
         'mobile_no',
         'course_id',
         'add_type',

@@ -83,9 +83,7 @@
                                         <li class="nk-menu-item">
                                             <a href="{{ route('enroll.index') }}" class="nk-menu-link"><span class="nk-menu-text">Enroll History</span></a>
                                         </li>
-                                        <li class="nk-menu-item">
-                                            <a href="{{ route('enroll.create') }}" class="nk-menu-link"><span class="nk-menu-text">Enroll a Student</span></a>
-                                        </li>
+                                     
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
                                 {{-- <li class="nk-menu-item">

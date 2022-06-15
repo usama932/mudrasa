@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Student;
 class EnrollController extends Controller
 {
     /**
@@ -14,7 +14,8 @@ class EnrollController extends Controller
      */
     public function index()
     {
-        return view('admin.enroll.enroll_history');
+        $students =  Student::all();
+        return view('admin.enroll.enroll_history',compact('students'));
     }
 
     /**

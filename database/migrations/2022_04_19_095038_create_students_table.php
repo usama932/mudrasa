@@ -23,13 +23,15 @@ return new class extends Migration
             $table->string('father_occupation')->nullable();
             $table->string('instructor')->nullable();
             $table->string('home_address')->nullable();
-            $table->string('previous_address')->nullable();
+            $table->string('passing_year')->nullable();
+            $table->string('addmission_date')->nullable();
             $table->string('image')->nullable();
             $table->string('mobile_no')->nullable();
             $table->string('course_id')->nullable();
             $table->string('previous_school')->nullable();
             $table->string('add_type')->nullable();
             $table->string('Enroll_type')->nullable();
+            $table->string('status')->nullable();
 
             $table->timestamps();
         });

@@ -41,6 +41,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
+
         Student::create([
             'name'=>$request->name,
             'father_name'=>$request->father_name,
@@ -53,10 +54,11 @@ class StudentController extends Controller
             'previous_school'=>$request->previous_school,
             'image'=>$request->image,
             'add_type'=>$request->add_type,
-            'reg_no'=>$request->reh_no,
+            'reg_no'=>$request->reg_no,
             'instructor'=>$request->instructor,
             'Enroll_type' =>$request->Enroll_type
         ]);
+        return redirect()->back()->with('success','Student Added Sccess fully/ طالب علم کو کامیابی کے ساتھ شامل کیا گیا۔');
     }
 
     /**
@@ -101,6 +103,8 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $student = Student::find($id);
+        $student->delete();
+        return redirect()->route('students.index')->with('danger','Student deleted successfully/  طالب علم کو کامیابی سے حذف کر دیا گیا۔');
     }
 }

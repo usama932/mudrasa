@@ -13,29 +13,9 @@
                                     <a href="#" class="btn btn-icon btn-trigger toggle-expand mr-n1" data-target="more-options"><em class="icon ni ni-more-v"></em></a>
                                     <div class="toggle-expand-content" data-content="more-options">
                                         <ul class="nk-block-tools g-3">
-                                            <li>
-                                                <div class="form-control-wrap">
-                                                    <div class="form-icon form-icon-right">
-                                                        <em class="icon ni ni-search"></em>
-                                                    </div>
-                                                    <input type="text" class="form-control" id="default-04" placeholder="Search by name">
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="drodown">
-                                                    <a href="#" class="dropdown-toggle dropdown-indicator btn btn-outline-light btn-white" data-toggle="dropdown">Status</a>
-                                                    <div class="dropdown-menu dropdown-menu-right">
-                                                        <ul class="link-list-opt no-bdr">
-                                                            <li><a href="#"><span>Actived</span></a></li>
-                                                            <li><a href="#"><span>Inactived</span></a></li>
-                                                            <li><a href="#"><span>Blocked</span></a></li>
-                                                        </ul>
-                                                    </div>
-                                                </div>
-                                            </li>
                                             <li class="nk-block-tools-opt">
-                                                <a href="html/lms/enroll-student.html" class="btn btn-icon btn-primary d-md-none"><em class="icon ni ni-plus"></em></a>
-                                                <a href="html/lms/enroll-student.html" class="btn btn-primary d-none d-md-inline-flex"><em class="icon ni ni-plus"></em><span>Add</span></a>
+                                                <a href="#" class="btn btn-icon btn-primary d-md-none" data-toggle="modal" data-target="#student-add"><em class="icon ni ni-plus"></em></a>
+                                                <a href="#" class="btn btn-primary d-none d-md-inline-flex" data-toggle="modal" data-target="#student-add"><em class="icon ni ni-plus"></em><span>Add</span></a>
                                             </li>
                                         </ul>
                                     </div>
@@ -43,663 +23,146 @@
                             </div><!-- .nk-block-head-content -->
                         </div><!-- .nk-block-between -->
                     </div><!-- .nk-block-head -->
-                    <div class="nk-block">
-                        <div class="card">
-                            <div class="card-inner-group">
-                                <div class="card-inner p-0">
-                                    <div class="nk-tb-list nk-tb-ulist">
-                                        <div class="nk-tb-item nk-tb-head">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid">
-                                                    <label class="custom-control-label" for="uid"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col"><span class="sub-text">User</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Phone</span></div>
-                                            <div class="nk-tb-col tb-col-mb"><span class="sub-text">Enrolled Courses</span></div>
-                                            <div class="nk-tb-col tb-col-lg"><span class="sub-text">Enrollment date</span></div>
-                                            <div class="nk-tb-col tb-col-md"><span class="sub-text">Status</span></div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1 my-n1">
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="#"><em class="icon ni ni-mail"></em><span>Send Email to All</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-na"></em><span>Suspend Selected</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-trash"></em><span>Remove Seleted</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid1">
-                                                    <label class="custom-control-label" for="uid1"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar bg-primary">
-                                                            <span>AB</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Abu Bin Ishtiyak <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                            <span>info@softnio.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 758-756433</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">UI/UX Design with Adobe XD</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-warning">Wating</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid2">
-                                                    <label class="custom-control-label" for="uid2"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar">
-                                                            <img src="./images/avatar/c-sm.jpg" alt="">
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Ashley Lawson <span class="dot dot-warning d-md-none ml-1"></span></span>
-                                                            <span>ashley@softnio.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 758-756433</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Front-end Web Development with React</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-success">Accepted</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid3">
-                                                    <label class="custom-control-label" for="uid3"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar bg-info">
-                                                            <span>JL</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Joe Larson <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                            <span>larson@example.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 987-4958</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">UI/UX Design with Adobe XD</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-success">Accepted</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid4">
-                                                    <label class="custom-control-label" for="uid4"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <div class="user-card">
-                                                    <div class="user-avatar bg-danger">
-                                                        <span>JM</span>
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="tb-lead">Jane Mont<span class="dot dot-danger d-md-none ml-1"></span></span>
-                                                        <span>jane84@example.com</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 765-4958</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Learn Android Development with project</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-07-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-warning">Wating</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid5">
-                                                    <label class="custom-control-label" for="uid5"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <div class="user-card">
-                                                    <div class="user-avatar">
-                                                        <img src="./images/avatar/a-sm.jpg" alt="">
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="tb-lead">Frances Burns <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                        <span>frances@example.com</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+639 130-3150</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Learn Android Development with project</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-08-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-danger">Rejected</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid6">
-                                                    <label class="custom-control-label" for="uid6"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar bg-primary">
-                                                            <span>AB</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Abu Bin Ishtiyak <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                            <span>info@softnio.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 758-756433</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">UI/UX Design with Adobe XD</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-warning">Wating</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid7">
-                                                    <label class="custom-control-label" for="uid7"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar">
-                                                            <img src="./images/avatar/c-sm.jpg" alt="">
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Ashley Lawson <span class="dot dot-warning d-md-none ml-1"></span></span>
-                                                            <span>ashley@softnio.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 758-756433</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Front-end Web Development with React</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-success">Accepted</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid8">
-                                                    <label class="custom-control-label" for="uid8"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <a href="#">
-                                                    <div class="user-card">
-                                                        <div class="user-avatar bg-info">
-                                                            <span>JL</span>
-                                                        </div>
-                                                        <div class="user-info">
-                                                            <span class="tb-lead">Joe Larson <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                            <span>larson@example.com</span>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 987-4958</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">UI/UX Design with Adobe XD</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-01-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-success">Accepted</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid9">
-                                                    <label class="custom-control-label" for="uid9"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <div class="user-card">
-                                                    <div class="user-avatar bg-danger">
-                                                        <span>JM</span>
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="tb-lead">Jane Mont<span class="dot dot-danger d-md-none ml-1"></span></span>
-                                                        <span>jane84@example.com</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+811 765-4958</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Learn Android Development with project</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-07-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-warning">Wating</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                        <div class="nk-tb-item">
-                                            <div class="nk-tb-col nk-tb-col-check">
-                                                <div class="custom-control custom-control-sm custom-checkbox notext">
-                                                    <input type="checkbox" class="custom-control-input" id="uid10">
-                                                    <label class="custom-control-label" for="uid10"></label>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col">
-                                                <div class="user-card">
-                                                    <div class="user-avatar">
-                                                        <img src="./images/avatar/a-sm.jpg" alt="">
-                                                    </div>
-                                                    <div class="user-info">
-                                                        <span class="tb-lead">Frances Burns <span class="dot dot-success d-md-none ml-1"></span></span>
-                                                        <span>frances@example.com</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span>+639 130-3150</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-mb">
-                                                <div class="text-primary tb-lead">Learn Android Development with project</div>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-lg">
-                                                <span>10-08-21</span>
-                                            </div>
-                                            <div class="nk-tb-col tb-col-md">
-                                                <span class="tb-status text-danger">Rejected</span>
-                                            </div>
-                                            <div class="nk-tb-col nk-tb-col-tools">
-                                                <ul class="nk-tb-actions gx-1">
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Send Email">
-                                                            <em class="icon ni ni-mail-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li class="nk-tb-action-hidden">
-                                                        <a href="#" class="btn btn-sm btn-trigger btn-icon" data-toggle="tooltip" data-placement="top" title="Suspend">
-                                                            <em class="icon ni ni-user-cross-fill"></em>
-                                                        </a>
-                                                    </li>
-                                                    <li>
-                                                        <div class="drodown">
-                                                            <a href="#" class="dropdown-toggle btn btn-sm btn-icon btn-trigger" data-toggle="dropdown"><em class="icon ni ni-more-h"></em></a>
-                                                            <div class="dropdown-menu dropdown-menu-right">
-                                                                <ul class="link-list-opt no-bdr">
-                                                                    <li><a href="html/lms/students-details.html"><em class="icon ni ni-eye"></em><span>View Details</span></a></li>
-                                                                    <li><a href="#"><em class="icon ni ni-activity-round"></em><span>Activities</span></a></li>
-                                                                </ul>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div><!-- .nk-tb-item -->
-                                    </div><!-- .nk-tb-list -->
-                                </div>
-                                <div class="card-inner">
-                                    <div class="nk-block-between-md g-3">
-                                        <div class="g">
-                                            <ul class="pagination justify-content-center justify-content-md-start">
-                                                <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-left"></em></a></li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><span class="page-link"><em class="icon ni ni-more-h"></em></span></li>
-                                                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">7</a></li>
-                                                <li class="page-item"><a class="page-link" href="#"><em class="icon ni ni-chevrons-right"></em></a></li>
-                                            </ul><!-- .pagination -->
-                                        </div>
-                                        <div class="g">
-                                            <div class="pagination-goto d-flex justify-content-center justify-content-md-start gx-3">
-                                                <div>Page</div>
-                                                <div>
-                                                    <select class="form-select form-select-sm" data-search="on" data-dropdown="xs center">
-                                                        <option value="page-1">1</option>
-                                                        <option value="page-2">2</option>
-                                                        <option value="page-4">4</option>
-                                                        <option value="page-5">5</option>
-                                                        <option value="page-6">6</option>
-                                                        <option value="page-7">7</option>
-                                                        <option value="page-8">8</option>
-                                                        <option value="page-9">9</option>
-                                                        <option value="page-10">10</option>
-                                                        <option value="page-11">11</option>
-                                                        <option value="page-12">12</option>
-                                                        <option value="page-13">13</option>
-                                                        <option value="page-14">14</option>
-                                                        <option value="page-15">15</option>
-                                                        <option value="page-16">16</option>
-                                                        <option value="page-17">17</option>
-                                                        <option value="page-18">18</option>
-                                                        <option value="page-19">19</option>
-                                                        <option value="page-20">20</option>
-                                                    </select>
-                                                </div>
-                                                <div>OF 102</div>
-                                            </div>
-                                        </div><!-- .pagination-goto -->
-                                    </div><!-- .nk-block-between -->
-                                </div>
-                            </div>
+                    @if(session()->has('success'))
+                    <div class="alert alert-success">
+                       {{ session()->get('success') }}
+                    </div>
+                    @endif
+                    @if(session()->has('danger'))
+                    <div class="alert alert-danger">
+                       {{ session()->get('danger') }}
+                    </div>
+                    @endif
+                    <div class="card card-preview">
+                        <div class="card-inner">
+                            <table class="datatable-init-export nowrap table" data-export-title="Export">
+                                <thead>
+                                    <tr>
+                                        <th>Full Name /پورا نام </th>
+                                        <th>Father Name/والد کا نام</th>
+                                        <th>Reg No #/ رجسٹر نمبر </th>
+                                        <th>Mobile #/ موبائل</th>
+                                        <th>Passing Year/ پاس آؤٹ سال</th>
+                                        <th>Status/ حالت</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach ($students as $student)
+                                    <tr>
+                                        <td>{{ $student->name }}</td>
+                                        <td>{{ $student->father_name }}</td>
+                                        <td>{{ $student->reg_no }}</td>
+                                        <td>{{ $student->mobile_no}}</td>
+                                        <td>{{ $student->passing_year}}</td>
+                                        <td>{{ $student->Enroll_type}}</td>
+
+                                        <td>
+                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Add</button>
+                                            <form action="{{route('students.destroy',$student->id)}}" method="POST">
+
+                                            @csrf
+                                            @method('DELETE')
+
+                                            <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                                        </form></td>
+                                    </tr>
+                                    @endforeach
+
+                                </tbody>
+                            </table>
                         </div>
-                    </div><!-- .nk-block -->
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+ {{-- Add-Modal --}}
+ <div class="modal fade" role="dialog" id="student-add">
+    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+        <div class="modal-content">
+            <a href="#" class="close" data-dismiss="modal"><em class="icon ni ni-cross-sm"></em></a>
+            <div class="modal-body modal-body-md">
+                <h5 class="title">Add PassOut Students/ پاس آؤٹ طلباء کو شامل کریں۔</h5>
+                <ul class="nk-nav nav nav-tabs mt-n2">
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#student-info">Student Infomation</a>
+                    </li>
+                </ul><!-- .nav-tabs -->
+                <div class="tab-content">
+                    <div class="tab-pane active" id="student-info">
+                        <form action="{{ route('students.store') }}" method="post">
+                            @csrf
+                            <div class="row gy-4">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Full Name / پورا نام</label>
+                                        <input type="text" class="form-control" name="name" id="full-name" placeholder="Full Name / پورا نام">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name"> Addmission # / داخلہ نمبر</label>
+                                        <input type="text" class="form-control" name="reg_no" id="full-name" placeholder="Addmission # / داخلہ نمبر">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Full Father Name/ والد کا پورا نام</label>
+                                        <input type="text" class="form-control" name="father_name" id="full-name" placeholder="Full Father Name/ والد کا پورا نام">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Father Occupation / باپ کا پیشہ</label>
+                                        <input type="text" class="form-control" name="father_occupation" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
+                                    </div>
+                                </div>
+
+
+
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone-no">Mobile Number/ موبائل نمبر</label>
+                                        <input type="text" class="form-control" name="mobile_no" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="phone-no">#form B/CNIC / فارم B/CNIC </label>
+                                        <input type="text" class="form-control" name="cnic" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="birth-day">Date of Birth/ پیدائش کی تاریخ</label>
+                                        <input type="date" class="form-control" name="dob" id="birth-day" placeholder="Date of Birth/ پیدائش کی تاریخ">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="address-l1">Home Address/ گھر کا پتہ</label>
+                                        <input type="text" class="form-control" name="home_address" id="address-l1" value="" >
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12">
+                                    <ul class="align-center flex-wrap flex-sm-nowrap gx-4 gy-2">
+                                        <li>
+                                            <button type="submit" class="btn btn-primary">Add Student</button>
+                                        </li>
+                                        <li>
+                                            <a href="#" data-dismiss="modal" class="link link-light">Cancel</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </div><!-- .tab-pane -->
+
+                </div><!-- .tab-content -->
+            </div><!-- .modal-body -->
+        </div><!-- .modal-content -->
+    </div><!-- .modal-dialog -->
+</div><!-- .modal -->
 </x-app-layout>
