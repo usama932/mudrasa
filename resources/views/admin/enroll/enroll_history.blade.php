@@ -114,12 +114,23 @@
                                 </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
-                                        <label class="form-label" for="full-name">Father Occupation / باپ کا پیشہ</label>
-                                        <input type="text" class="form-control" name="father_occupation" id="full-name" placeholder="Father Occupation / باپ کا پیشہ">
+                                        <label class="form-label"> Enroll type/ اندراج کی قسم</label>
+                                        <div class="form-control-wrap">
+                                            <select class="form-select" name="Enroll_type" data-placeholder="Enroll Type/ اندراج کی قسم">
+                                                <option value="Temporary/عارضی">Left out/ چھوڑگیا</option>
+                                                <option value="Kicked out/نکال دیا">Kicked out/نکال دیا</option>
+                                                <option value="Completed/مکمل کر گیا ">Completed/مکمل کر گیا</option>
+                                            </select>
+                                        </div>
                                     </div>
                                 </div>
 
-
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="form-label" for="full-name">Passing Year/ پاس آؤٹ سال</label>
+                                        <input type="date" class="form-control" name="passing_year" id="full-name" placeholder="Passing Year/ پاس آؤٹ سال">
+                                    </div>
+                                </div>
 
                                 <div class="col-md-6">
                                     <div class="form-group">
@@ -127,12 +138,12 @@
                                         <input type="text" class="form-control" name="mobile_no" id="phone-no" value="0300-0000000" placeholder="Mobile Number/ موبائل نمبر">
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="phone-no">#form B/CNIC / فارم B/CNIC </label>
                                         <input type="text" class="form-control" name="cnic" id="phone-no" value="37603-2342322-2" placeholder="#form B/CNIC / فارم B/CNIC">
                                     </div>
-                                </div>
+                                </div> --}}
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="form-label" for="birth-day">Date of Birth/ پیدائش کی تاریخ</label>

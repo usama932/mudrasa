@@ -23,6 +23,7 @@ class Student extends Model
         'add_type',
         'reg_no',
         'instructor',
-        'Enroll_type'
+        'Enroll_type',
+        'passing_year'
     ];
 }
