@@ -59,14 +59,16 @@
                                         <td>{{ $student->image }}</td>
                                         <td>{{ $student->mobile_no}}</td>
                                         <td>
-                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Add</button>
+                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Edit</button>
                                             <form action="{{route('students.destroy',$student->id)}}" method="POST">
 
-                                            @csrf
-                                            @method('DELETE')
+                                                @csrf
+                                                @method('DELETE')
 
-                                            <button type="submit" class="btn btn-danger btn-xs">Delete</button>
-                                        </form></td>
+                                                <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+
+                                            </form>
+                                        </td>
                                     </tr>
                                     @endforeach
 
