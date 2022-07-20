@@ -83,7 +83,7 @@
                                         <li class="nk-menu-item">
                                             <a href="{{ route('enroll.index') }}" class="nk-menu-link"><span class="nk-menu-text">Enroll History</span></a>
                                         </li>
-                                     
+
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
                                 {{-- <li class="nk-menu-item">
@@ -105,10 +105,7 @@
                                     </a>
                                     <ul class="nk-menu-sub">
                                         <li class="nk-menu-item">
-                                            <a href="html/lms/student-invoice-list.html" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
-                                        </li>
-                                        <li class="nk-menu-item">
-                                            <a href="html/lms/student-invoice-details.html" class="nk-menu-link"><span class="nk-menu-text">Invoice Details</span></a>
+                                            <a href="{{ route('invoices.index') }}" class="nk-menu-link"><span class="nk-menu-text">Invoice List</span></a>
                                         </li>
                                     </ul><!-- .nk-menu-sub -->
                                 </li><!-- .nk-menu-item -->
@@ -135,10 +132,7 @@
                                     <img class="logo-dark logo-img" src="./images/logo-dark.png" srcset="./images/logo-dark2x.png 2x" alt="logo-dark">
                                 </a>
                             </div><!-- .nk-header-brand -->
-                            <div class="nk-header-search ml-3 ml-xl-0">
-                                <em class="icon ni ni-search"></em>
-                                <input type="text" class="form-control border-transparent form-focus-none" placeholder="Search anything">
-                            </div><!-- .nk-header-news -->
+
                             <div class="nk-header-tools">
                                 <ul class="nk-quick-nav">
                                     <li class="dropdown user-dropdown">

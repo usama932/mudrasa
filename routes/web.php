@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\EnrollController;
 use App\Http\Controllers\Admin\StudentController;
 use App\Http\Controllers\Admin\CourseController;
 use App\Http\Controllers\Admin\InstructorsController;
+use App\Http\Controllers\Admin\InvoiceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,16 +18,18 @@ use App\Http\Controllers\Admin\InstructorsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::group(['middleware' => ['auth']], function() {
-    Route::get('/dashboard',[HomeController::class,'index' ] )->name('dashboard');
+    Route::get('/',[HomeController::class,'index' ] )->name('dashboard');
 });
 Route::resource('enroll', EnrollController::class);
 Route::resource('students', StudentController::class);
 Route::resource('courses', CourseController::class);
 Route::resource('instructors', InstructorsController::class);
+Route::resource('invoices',InvoiceController::class);
+
 
 require __DIR__.'/auth.php';

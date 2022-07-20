@@ -35,45 +35,47 @@
                     @endif
                     <div class="card card-preview">
                         <div class="card-inner">
-                            <table class="datatable-init-export nowrap table" data-export-title="Export">
-                                <thead>
-                                    <tr>
-                                        <th>Name /پورا نام</th>
-                                        <th>Father Name /والد کا نام</th>
-                                        <th>Reg No # / رجسٹر نمبر</th>
-                                        <th>Course/ کورس</th>
-                                        <th>Instructor/ استاد</th>
-                                        <th>Image/ تصویر</th>
-                                        <th>Mobile # / موبائل</th>
-                                        <th>Action/ عمل</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($students as $student)
-                                    <tr>
-                                        <td>{{ $student->name }}</td>
-                                        <td>{{ $student->father_name }}</td>
-                                        <td>{{ $student->reg_no }}</td>
-                                        <td>{{ $student->course_id }}</td>
-                                        <td>{{ $student->instructor }}</td>
-                                        <td>{{ $student->image }}</td>
-                                        <td>{{ $student->mobile_no}}</td>
-                                        <td>
-                                            <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Edit</button>
-                                            <form action="{{route('students.destroy',$student->id)}}" method="POST">
+                            <div class="table-responsive">
+                                <table class="datatable-init-export nowrap table" data-auto-responsive="false">
+                                    <thead>
+                                        <tr>
+                                            <th>Name /پورا نام</th>
+                                            <th>Father Name /والد کا نام</th>
+                                            <th>Reg No # / رجسٹر نمبر</th>
+                                            <th>Course/ کورس</th>
+                                            <th>Instructor/ استاد</th>
+                                            <th>Image/ تصویر</th>
+                                            <th>Mobile # / موبائل</th>
+                                            <th>Action/ عمل</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($students as $student)
+                                        <tr>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->father_name }}</td>
+                                            <td>{{ $student->reg_no }}</td>
+                                            <td>{{ $student->course_id }}</td>
+                                            <td>{{ $student->instructor }}</td>
+                                            <td>{{ $student->image }}</td>
+                                            <td>{{ $student->mobile_no}}</td>
+                                            <td>
+                                                <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Edit</button>
+                                                <form action="{{route('students.destroy',$student->id)}}" method="POST">
 
-                                                @csrf
-                                                @method('DELETE')
+                                                    @csrf
+                                                    @method('DELETE')
 
-                                                <button type="submit" class="btn btn-danger btn-xs">Delete</button>
+                                                    <button type="submit" class="btn btn-danger btn-xs">Delete</button>
 
-                                            </form>
-                                        </td>
-                                    </tr>
-                                    @endforeach
+                                                </form>
+                                            </td>
+                                        </tr>
+                                        @endforeach
 
-                                </tbody>
-                            </table>
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -253,6 +255,7 @@
                     <div class="tab-pane active" id="student-info">
                         <form action="{{ route('students.update', $student->id) }}" method="post">
                             @csrf
+                            @method('put')
                             <div class="row gy-4">
                                 <div class="col-md-6">
                                     <div class="form-group">

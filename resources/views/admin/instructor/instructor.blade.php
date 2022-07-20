@@ -27,41 +27,44 @@
                            {{ session()->get('success') }}
                         </div>
                         @endif
-                    </div> <div class="card card-preview">
+                    </div>
+                    <div class="card card-preview">
                         <div class="card-inner">
-                            <table class="datatable-init-export nowrap table" data-export-title="Export">
-                                <thead>
-                                    <tr>
-                                        <th>Full Name/ پورا نام</th>
-                                        <th>Degree/ سناد</th>
-                                        <th>Phone #/فون</th>
-                                        <th>Experiance/ تجربہ</th>
-                                        <th>Address/ پتہ</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    @foreach($instructors as $instructor)
-                                    <tr>
-                                        <td>{{ $instructor->full_name }}</td>
-                                        <td>{{ $instructor->last_degree }}</td>
-                                        <td>{{ $instructor->phone_number  }}</td>
-                                        <td>{{ $instructor->experiance  }}</td>
-                                        <td>{{ $instructor->address  }}</td>
-                                        <td>{{ $instructor->about_instructor  }}</td>
-                                        <td>
-                                            <span>
-                                            <a href="{{ route('instructors.edit', $instructor->id) }}" data-toggle="modal" data-target="#instructor-add{{ $instructor->id}}"><em class="icon ni ni-edit-fill"></em></a>
-                                            <form action="{{ route('instructors.destroy', $instructor->id) }}" method="POST">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-icon btn-danger"><em class="icon ni ni-trash-fill"></em></button>
-                                            </form>
-                                            </span>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
+                            <div class="table-responsive">
+                                <table class="datatable-init-export nowrap table" data-auto-responsive="false">
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name/ پورا نام</th>
+                                            <th>Degree/ سناد</th>
+                                            <th>Phone #/فون</th>
+                                            <th>Experiance/ تجربہ</th>
+                                            <th>Address/ پتہ</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @foreach($instructors as $instructor)
+                                        <tr>
+                                            <td>{{ $instructor->full_name }}</td>
+                                            <td>{{ $instructor->last_degree }}</td>
+                                            <td>{{ $instructor->phone_number  }}</td>
+                                            <td>{{ $instructor->experiance  }}</td>
+                                            <td>{{ $instructor->address  }}</td>
+                                            <td>{{ $instructor->about_instructor  }}</td>
+                                            <td>
+                                                <span>
+                                                <a href="{{ route('instructors.edit', $instructor->id) }}" data-toggle="modal" data-target="#instructor-add{{ $instructor->id}}"><em class="icon ni ni-edit-fill"></em></a>
+                                                <form action="{{ route('instructors.destroy', $instructor->id) }}" method="POST">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-icon btn-danger"><em class="icon ni ni-trash-fill"></em></button>
+                                                </form>
+                                                </span>
+                                        </tr>
+                                        @endforeach
+                                    </tbody>
+                                </table>
+                            </div>
                         </div>
                     </div>
                 </div>

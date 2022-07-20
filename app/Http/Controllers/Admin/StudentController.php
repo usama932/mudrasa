@@ -92,7 +92,23 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        Student::where('id',$id)->update([
+            'name'=>$request->name,
+            'father_name'=>$request->father_name,
+            'father_occupation'=>$request->father_occupation,
+            'course_id'=>$request->course_id,
+            'mobile_no'=>$request->mobile_no,
+            'cnic'=>$request->cnic,
+            'dob'=>$request->dob,
+            'home_address'=>$request->home_address,
+            'previous_school'=>$request->previous_school,
+            'image'=>$request->image,
+            'add_type'=>$request->add_type,
+            'reg_no'=>$request->reg_no,
+            'instructor'=>$request->instructor,
+            'Enroll_type' =>$request->Enroll_type
+        ]);
+        return redirect()->back()->with('success','Student Updated Sccessfully/ طالب علم کو کامیابی کے ساتھ شامل کیا گیا۔');
     }
 
     /**
