@@ -56,8 +56,8 @@
                                                 <td>{{ $invoice->description }}</td>
                                                 <td>
                                                     <div class="tb-odr-btns d-none d-sm-inline">
-                                                    <a href="" target="_blank" class="btn btn-icon btn-white btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
-                                                    <a href="{{ route('invoices.show',$invoice->id) }}" class="btn btn-dim btn-sm btn-primary">View</a>
+                                                    <a href="" class="btn btn-icon btn-white btn-dim btn-sm btn-primary">View</a>
+                                                    <a href="{{ route('invoices.show',$invoice->id) }}" class="btn btn-dim btn-sm btn-primary"><em class="icon ni ni-printer-fill"></em></a>
                                                     </div>
                                                 </td>
                                             </tr>

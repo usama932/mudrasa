@@ -89,7 +89,7 @@ class InvoiceController extends Controller
         $invoice = Invoice::where('id',$id)->first();
 
         $students = Student::where('id',$invoice->student_id)->first();
-        return view('admin.invoice.invoice_detail',compact('students','invoice'));
+        return view('admin.invoice.print_invoice',compact('students','invoice'));
     }
 
     /**

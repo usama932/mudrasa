@@ -69,7 +69,8 @@ class StudentController extends Controller
      */
     public function show($id)
     {
-        //
+        $student = Student::where('id',$id)->first();
+        return view('admin.student.show',compact('student'));
     }
 
     /**

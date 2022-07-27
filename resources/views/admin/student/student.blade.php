@@ -61,6 +61,7 @@
                                             <td>{{ $student->mobile_no}}</td>
                                             <td>
                                                 <button class="btn btn-info btn-xs" data-toggle="modal" data-target="#student-add{{ $student->id}}">Edit</button>
+                                                <a href="{{ route('students.show','$student->id') }}"><button class="btn btn-info btn-xs">Show</button></a>
                                                 <form action="{{route('students.destroy',$student->id)}}" method="POST">
 
                                                     @csrf
