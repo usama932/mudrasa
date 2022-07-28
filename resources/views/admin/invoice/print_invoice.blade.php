@@ -10,7 +10,7 @@
     <!-- Fav Icon  -->
     <link rel="shortcut icon" href="./images/favicon.png">
     <!-- Page Title  -->
-    <title>Student Invoice Print | LMS | DashLite Admin Template</title>
+    <title>Mudrasa Muhammdia Dar-ul-Quran----مدرسہ محمدیہ دارالقرآن</title>
     <!-- StyleSheets  -->
     <link rel="stylesheet" href="./assets/css/dashlite.css?ver=2.9.1">
     <link id="skin-default" rel="stylesheet" href="./assets/css/theme.css?ver=2.9.1">
@@ -26,18 +26,16 @@
 .register-left{
     text-align: center;
     color: #fff;
-    margin-top: 4%;
+    margin-top: 1%;
 }
 .register-left input{
     border: none;
     border-radius: 1.5rem;
-    padding: 2%;
+    padding: 1%;
     width: 60%;
     background: #f8f9fa;
     font-weight: bold;
-    color: #383d41;
-    margin-top: 30%;
-    margin-bottom: 3%;
+    color: #ffffff;
     cursor: pointer;
 }
 .register-right{
@@ -46,8 +44,6 @@
     border-bottom-left-radius: 10% 50%;
 }
 .register-left img{
-    margin-top: 15%;
-    margin-bottom: 5%;
     width: 25%;
     -webkit-animation: mover 2s infinite  alternate;
     animation: mover 1s infinite  alternate;
@@ -62,8 +58,6 @@
 }
 .register-left p{
     font-weight: lighter;
-    padding: 12%;
-    margin-top: -9%;
 }
 .register .register-form{
     padding: 10%;
@@ -117,132 +111,76 @@
 </head>
 
 <body class="bg-white" onload="printPromot()">
-    <div class="nk-block">
-        <div class="invoice invoice-print">
-            <div class="invoice-wrap">
-                <div class="invoice-brand text-center">
-                    <img src="{{ asset('assets/images/logo1.jpg')}}" srcset="{{ asset('assets/images/logo-dark2x.png') }} 2x" alt="">
-                </div>
-                <div class="container register">
-                    <div class="row">
-                       <div class="col-md-3 register-left">
-                          <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                          <h3>Welcome</h3>
-                          <p>You are 30 seconds away from earning your own money!</p>
-                          <input type="submit" name="" value="Login"/><br/>
-                       </div>
-                       <div class="col-md-9 register-right">
-                          <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                             <li class="nav-item">
-                                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Employee</a>
-                             </li>
-                             <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Hirer</a>
-                             </li>
-                          </ul>
-                          <div class="tab-content" id="myTabContent">
-                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Apply as a Employee</h3>
-                                <div class="row register-form">
-                                   <div class="col-md-6">
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="First Name *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="Last Name *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="password" class="form-control" placeholder="Password *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="password" class="form-control"  placeholder="Confirm Password *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <div class="maxl">
-                                            <label class="radio inline">
-                                            <input type="radio" name="gender" value="male" checked>
-                                            <span> Male </span>
-                                            </label>
-                                            <label class="radio inline">
-                                            <input type="radio" name="gender" value="female">
-                                            <span>Female </span>
-                                            </label>
-                                         </div>
-                                      </div>
-                                   </div>
-                                   <div class="col-md-6">
-                                      <div class="form-group">
-                                         <input type="email" class="form-control" placeholder="Your Email *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Your Phone *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <select class="form-control">
-                                            <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                            <option>What is your Birthdate?</option>
-                                            <option>What is Your old Phone Number</option>
-                                            <option>What is your Pet Name?</option>
-                                         </select>
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="Enter Your Answer *" value="" />
-                                      </div>
-                                      <input type="submit" class="btnRegister"  value="Register"/>
-                                   </div>
-                                </div>
-                             </div>
-                             <div class="tab-pane fade show" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                                <h3  class="register-heading">Apply as a Hirer</h3>
-                                <div class="row register-form">
-                                   <div class="col-md-6">
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="First Name *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="Last Name *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="email" class="form-control" placeholder="Email *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="" />
-                                      </div>
-                                   </div>
-                                   <div class="col-md-6">
-                                      <div class="form-group">
-                                         <input type="password" class="form-control" placeholder="Password *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="password" class="form-control" placeholder="Confirm Password *" value="" />
-                                      </div>
-                                      <div class="form-group">
-                                         <select class="form-control">
-                                            <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
-                                            <option>What is your Birthdate?</option>
-                                            <option>What is Your old Phone Number</option>
-                                            <option>What is your Pet Name?</option>
-                                         </select>
-                                      </div>
-                                      <div class="form-group">
-                                         <input type="text" class="form-control" placeholder="`Answer *" value="" />
-                                      </div>
-                                      <input type="submit" class="btnRegister"  value="Register"/>
-                                   </div>
-                                </div>
-                             </div>
-                          </div>
-                       </div>
-                    </div>
-                 </div>
-            </div><!-- .invoice-wrap -->
-        </div><!-- .invoice -->
-    </div><!-- .nk-block -->
-    <script>
-        function printPromot() {
-            window.print();
-        }
-    </script>
+<div class="nk-block">
+   <div class="invoice invoice-print">
+      <div class="invoice-wrap">
+         <div class="container register">
+            <div class="row">
+               <div class="col-md-3 register-left mt-0 mb-0">
+                  <img src="{{ asset('assets/images/logo_white.png')}}" style="width:240px; height:260px " alt=""/>
+                  <h3>Recipt/ رسید</h3>
+                  <h5 class="text-center">مدرسہ محمدیہ دارالقرآن
+                  </h5><h6>واہ کینٹ -- HC20 </h6>
+               </div>
+               <div class="col-md-9 register-right">
+                  <div class="invoice-brand text-center pb-0 mb-0">
+                     <img src="{{ asset('assets/images/logo1.jpg')}}" srcset="{{ asset('assets/images/logo-dark2x.png') }} 2x" alt="">
+                  </div>
+                  <div style="margin:2%">
+                     <div style="float:right"> Date:</div>
+                     <div class="mb-1" >S.No:</div>
+                     <div> Admission No:</div>
+                  </div>
+
+                  <div class="row mx-2 my-3">
+                     <div class="col">
+                     <lable class="ml-2">Name/نام :</lable>
+                        <i>wah</i>
+                     </div>
+                     <div class="col">
+                     <lable class="ml-2">Father's Name/ولديت</lable>
+                     <i>wan</i>
+                     </div>
+                  </div>
+                  <div class="row mx-2 my-3">
+                     <div class="col">
+                     <lable class="ml-2">Class/کلاس</lable>
+                     <i>wan</i>
+                     </div>
+                     <div class="col">
+                     <lable class="ml-2">Fees/تعاون</lable>
+                     <i>wan</i>
+                     </div>
+                  </div>
+                  <div class="row mx-2 my-3">
+                     <div class="col">
+                        <lable class="ml-2">Rupees/رقم  </lable>
+                        <i>wan</i>
+                     </div>
+                     <div class="col">
+                     <lable class="ml-2">Category/مد</lable>
+                     <i>wan</i>
+                     </div>
+                  </div>
+                  <div class="row mx-2 my-3">
+                     <div class="col">
+                        <lable class="ml-2">Address/پتہ</lable>
+                        <i>wan</i>
+                        </div>
+                  </div>
+                  <div class="mx-4" style="float:right">
+                     Receiver Sign.</div>
+               </div>
+            </div>
+         </div><!-- .invoice-wrap -->
+      </div>
+   </div>
+</div><!-- .nk-block -->
+<script>
+   function printPromot() {
+      window.print();
+   }
+</script>
 </body>
 
 </html>
