@@ -19,13 +19,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <style>
         .register{
-    background: -webkit-linear-gradient(left, #3931af, #00c6ff);
+    background: -webkit-linear-gradient(left, #efeff0, #00c6ff);
     margin-top: 3%;
     padding: 3%;
 }
 .register-left{
     text-align: center;
-    color: #fff;
+    color: black;
     margin-top: 1%;
 }
 .register-left input{
@@ -120,16 +120,16 @@
                   <img src="{{ asset('assets/images/logo_white.png')}}" style="width:240px; height:260px " alt=""/>
                   <h3>Recipt/ رسید</h3>
                   <h5 class="text-center">مدرسہ محمدیہ دارالقرآن
-                  </h5><h6>واہ کینٹ -- HC20 </h6>
+                  </h5><h6>واہ کینٹ&nbsp20-HC </h6>
                </div>
                <div class="col-md-9 register-right">
                   <div class="invoice-brand text-center pb-0 mb-0">
                      <img src="{{ asset('assets/images/logo1.jpg')}}" srcset="{{ asset('assets/images/logo-dark2x.png') }} 2x" alt="">
                   </div>
                   <div style="margin:2%">
-                     <div style="float:right"> Date:</div>
-                     <div class="mb-1" >S.No:</div>
-                     <div> Admission No:</div>
+                     <div style="float:right"> Date:-&nbsp date('d/M/y', strtotime($invoice->created_at))</div>
+                     <div class="mb-1" >S.No:-&nbsp<i>{{$invoice->id  }}</i></div>
+                     <div> Admission No:-&nbsp {{ $student-> }}</div>
                   </div>
 
                   <div class="row mx-2 my-3">
